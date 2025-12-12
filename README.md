@@ -78,6 +78,9 @@ python senzing_python_net_example.py
 ```python
 from senzing_python_net_example import SenzingClient
 
+# Define SDK path
+sdk_path = r"C:\senzing\er\sdk\dotnet\extracted\lib\netstandard2.0"
+
 # Configuration
 settings = {
     "PIPELINE": {
