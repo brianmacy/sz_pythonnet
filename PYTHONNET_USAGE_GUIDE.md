@@ -2,13 +2,16 @@
 
 ## Overview
 
-This guide explains how to use the Senzing C# SDK from Python using Python.NET (pythonnet). This enables Python developers to call .NET assemblies and use the Senzing C# SDK directly.
+This guide explains how to use the Senzing C# SDK from Python using Python.NET (pythonnet). This approach is particularly useful for Python developers on **Windows and macOS** where native Python support may be limited.
+
+**Note:** Senzing provides native Python support on Linux. The Senzing SDK also supports Java on all platforms. This guide focuses on the Python.NET path for Windows and macOS development.
 
 **Why Python.NET:**
+- Access Senzing on Windows and macOS from Python
 - Direct access to officially supported C# SDK
 - No wrapper maintenance overhead
 - Full access to all SDK methods and features
-- Cross-platform (.NET Core/.NET 5+)
+- Cross-platform .NET support (Framework/Core)
 
 ## Prerequisites
 
@@ -784,10 +787,6 @@ finally:
 ```
 
 ## Performance Considerations
-
-### Connection Pooling
-
-The C# SDK manages database connections internally. Create one environment per application.
 
 ### Batch Processing
 

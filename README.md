@@ -1,24 +1,28 @@
 # Senzing C# SDK via Python.NET
 
-Python.NET integration for using the Senzing C# SDK on Windows.
+Python.NET integration for using the Senzing C# SDK.
 
 ## Overview
 
-This repository demonstrates using the Senzing C# SDK from Python on Windows using Python.NET (pythonnet). This approach leverages the officially supported C# SDK while maintaining Python's ease of use.
+This repository demonstrates using the Senzing C# SDK from Python using Python.NET (pythonnet). This approach enables Python developers on **Windows and macOS** to access Senzing entity resolution capabilities.
+
+**Note:** Senzing provides native Python support on Linux. Python.NET provides an alternative path for Windows and macOS where native Python support may be limited.
 
 **Why Python.NET?**
-- Single maintenance path for Windows
-- Leverages well-tested C# SDK
-- Avoids Python distribution fragmentation
-- Natural .NET integration on Windows
+- Access Senzing on Windows and macOS
+- Direct access to officially supported C# SDK
+- Leverages well-tested SDK without wrapper maintenance
+- Full API access with type safety
+- Cross-platform .NET support
 
 ## Requirements
 
-- **Python**: 3.11, 3.12, or 3.13 (x64 only)
+- **Python**: 3.11, 3.12, or 3.13
   - *Note: Python 3.14 not yet supported by pythonnet*
 - **pythonnet**: `pip install pythonnet`
-- **.NET Framework**: 4.x (included with Windows)
-- **Senzing SDK**: Version 4.x for Windows
+- **.NET Runtime**: Framework 4.x (Windows) or .NET Core 2.0+ (cross-platform)
+- **Senzing SDK**: Version 4.x
+  - Supported: Windows (x64), Linux (amd64, arm64), macOS (Apple Silicon)
 
 ## Quick Start
 
@@ -204,7 +208,11 @@ GitHub Actions automatically runs linting on push and pull requests. See `.githu
 
 ## License
 
-Senzing C# SDK is proprietary software. Python.NET is licensed under MIT.
+This project (example code and documentation) is licensed under **Apache License 2.0**. See [LICENSE](LICENSE) file for details.
+
+**Third-Party Software:**
+- **Senzing C# SDK**: Proprietary software - refer to your Senzing license agreement
+- **Python.NET**: MIT License
 
 ## Support
 
@@ -215,7 +223,8 @@ For questions or issues:
 
 ## Notes
 
-- **Windows Only**: This implementation is specific to Windows x64
+- **Cross-Platform**: Senzing .NET SDK supports Windows, Linux, and macOS
 - **Python Versions**: Only 3.11, 3.12, and 3.13 are supported
 - **Database**: SQLite for development, PostgreSQL/SQL Server for production
 - **Testing**: Test thoroughly in your specific environment
+- **Runtime**: Use .NET Framework on Windows or .NET Core for cross-platform
