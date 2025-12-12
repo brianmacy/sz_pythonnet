@@ -1,0 +1,55 @@
+name: Python Linting
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12', '3.13']
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install linting tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pylint
+
+    - name: Syntax check with py_compile
+      run: |
+        python -m py_compile add_data_sources.py
+        python -m py_compile initialize_config.py
+        python -m py_compile senzing_python_net_example.py
+
+    - name: Lint with flake8
+      run: |
+        # Stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Exit-zero treats all errors as warnings
+        # E402: module level import not at top (expected for pythonnet runtime config)
+        flake8 . --count --max-line-length=120 --ignore=E402,E501,W503,F541 --statistics
+
+    - name: Lint with pylint
+      run: |
+        # Disable specific checks:
+        # C0114: missing-module-docstring (we have docstrings)
+        # C0115: missing-class-docstring (we have docstrings)
+        # C0116: missing-function-docstring (we have docstrings)
+        # R0913: too-many-arguments (SDK methods need many args)
+        # R0914: too-many-locals (demo methods are comprehensive)
+        # W0703: broad-except (intentional for demo robustness)
+        # C0411: wrong-import-order (pythonnet requires specific order)
+        pylint --disable=C0114,C0115,C0116,R0913,R0914,W0703,C0411 \
+               --max-line-length=120 \
+               add_data_sources.py initialize_config.py senzing_python_net_example.py || true

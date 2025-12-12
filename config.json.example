@@ -1,0 +1,9 @@
+{
+  "python": {
+    "version": "3.12",
+    "dll_path": "c:\\python312\\python312.dll"
+  },
+  "senzing": {
+    "senzing_root": "C:\\path\\to\\senzing"
+  }
+}
