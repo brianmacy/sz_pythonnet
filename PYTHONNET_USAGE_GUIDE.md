@@ -7,7 +7,7 @@ This guide explains how to use the Senzing C# SDK from Python using Python.NET (
 **Note:** Senzing provides native Python support on Linux. The Senzing SDK also supports Java on all platforms. This guide focuses on the Python.NET path for Windows and macOS development.
 
 **Why Python.NET:**
-- Access Senzing on Windows and macOS from Python
+- Access Senzing from Python on Windows and macOS, directly without a client/server setup
 - Direct access to officially supported C# SDK
 - No wrapper maintenance overhead
 - Full access to all SDK methods and features
