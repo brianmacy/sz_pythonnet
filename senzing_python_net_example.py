@@ -74,9 +74,12 @@ import clr
 
 class SenzingClient:
     """
-    Client for interacting with Senzing entity resolution engine via C# SDK.
+    Example wrapper for interacting with Senzing entity resolution engine via C# SDK.
 
-    This class provides a simplified interface to common Senzing operations.
+    This class provides a simplified, Pythonic interface to common Senzing operations.
+    It is intended as a reference implementation - customize it for your specific needs
+    by adding logging, error handling, retry logic, metrics, and other application
+    requirements.
     """
 
     def __init__(self, sdk_path: str, settings: Dict[str, Any]):

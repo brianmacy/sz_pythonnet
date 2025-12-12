@@ -129,6 +129,8 @@ The `SenzingClient` class provides a simplified interface:
 - `count_redo_records()` - Count pending redos
 - `process_redo_records()` - Process redos (iterator)
 
+**Note:** `SenzingClient` is an **example wrapper** to demonstrate calling the .NET SDK from Python in a more Pythonic way. Use it as a template and customize it for your specific needs - add your own logging, error reporting, retry logic, metrics, or other application-specific requirements.
+
 See [`PYTHONNET_USAGE_GUIDE.md`](PYTHONNET_USAGE_GUIDE.md) for complete documentation.
 
 ## Architecture
