@@ -77,9 +77,8 @@ class SenzingClient:
     Example wrapper for interacting with Senzing entity resolution engine via C# SDK.
 
     This class provides a simplified, Pythonic interface to common Senzing operations.
-    It is intended as a reference implementation - customize it for your specific needs
-    by adding logging, error handling, retry logic, metrics, and other application
-    requirements.
+    Use it as an example and build what works best for you - with your own logging,
+    error handling, retry logic, metrics, and other application requirements.
     """
 
     def __init__(self, sdk_path: str, settings: Dict[str, Any]):
